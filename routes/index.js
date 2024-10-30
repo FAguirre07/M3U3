@@ -3,9 +3,12 @@ var router = express.Router();
 
 var nodemailer = require('nodemailer');
 
+router.get("/", function (req, res, next) {
+  res.render("layout");
+});
 
 /* GET home page. */
-router.post('/', async function (req, res, next)  {
+router.post('/contacto', async function (req, res, next)  {
   var nombre = req.body.nombre;
   var apellido = req.body.apellido;
   var email = req.body.email;
@@ -17,7 +20,7 @@ router.post('/', async function (req, res, next)  {
   var obj = {
     to: 'fabriciolaguirre@gmail.com',
     subject: 'Contacto desde la web',
-    html: nombre + " " + apellido + "Se contacto a traves y quieres mas informacion del producto" + email
+    html:` ${nombre} ${apellido} Se contacto a traves de la página y quiere mas informacion del producto`
   }
   
   var transport = nodemailer.createTransport({
