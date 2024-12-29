@@ -19,7 +19,7 @@ router.get('/eliminar/:id_emp', async function(req,res,next){
     res.redirect('/admin/novedades');
 });
 
-router.get('/agregar/:id_emp', function(req,res,next) {
+router.get('/agregar', function(req,res,next) {
     res.render('admin/agregar' , {
         layout: 'admin/layout' 
 });
