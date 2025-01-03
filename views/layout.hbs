@@ -62,7 +62,7 @@
         <ul class="lista-novedades">
           {{#each novedades}}
           <li><a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal{{id_emp}}"><img
-                src="img/novedades01.jpg">{{titulo}}</a>
+                src="{{imagen}}" width="120">{{titulo}}</a>
           </li>
           {{/each}}
         </ul>
@@ -78,6 +78,7 @@
           </div>
           <div class="modal-body">
             <h1>{{subtitulo}}</h1>
+            <img src="{{imagen}}" width="120">  
             <p>{{cuerpo}}</p>
           </div>
           <div class="modal-footer">
